@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your social media page with animated floating stickers.">
+    <meta name="keywords" content="social media, floating stickers, animation, fun">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Your Social Media Page with Floating Stickers">
+    <meta property="og:description" content="Follow me on social media with animated stickers!">
+    <title>Your Social Media Links</title>
+    <!-- Include Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: url('cursor.png'), auto; /* Custom Cursor */
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000, #1a237e, #0d47a1, #3f51b5, #212121);
+            background-size: 400% 400%;
+            animation: neonBackground 5s ease infinite;
+        }
+
+        /* Neon Background with Color Changing Animation */
+        @keyframes neonBackground {
+            0% {
+                background: linear-gradient(135deg, #000000, #1a237e, #0d47a1, #3f51b5, #212121);
+            }
+            25% {
+                background: linear-gradient(135deg, #0d47a1, #000000, #1a237e, #3f51b5, #212121);
+            }
+            50% {
+                background: linear-gradient(135deg, #3f51b5, #0d47a1, #000000, #1a237e, #212121);
+            }
+            75% {
+                background: linear-gradient(135deg, #1a237e, #3f51b5, #0d47a1, #000000, #212121);
+            }
+            100% {
+                background: linear-gradient(135deg, #000000, #1a237e, #0d47a1, #3f51b5, #212121);
+            }
+        }
+
+        /* Sticker container */
+        .sticker {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+            background-color: transparent; /* Removes any background color */
+            animation: stickerAnimation 10s infinite linear;
+        }
+
+        /* Sticker Animations (unique movements for each sticker) */
+        @keyframes stickerAnimation1 {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(150px, -50px); }
+            50% { transform: translate(-100px, 200px); }
+            75% { transform: translate(250px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes stickerAnimation2 {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(50px, 100px); }
+            50% { transform: translate(150px, -150px); }
+            75% { transform: translate(-100px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes stickerAnimation3 {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-150px, 50px); }
+            50% { transform: translate(100px, -200px); }
+            75% { transform: translate(50px, 150px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes stickerAnimation4 {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-100px, 100px); }
+            50% { transform: translate(200px, 50px); }
+            75% { transform: translate(-150px, -100px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes stickerAnimation5 {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(100px, -150px); }
+            50% { transform: translate(-50px, 200px); }
+            75% { transform: translate(150px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes stickerAnimation6 {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-100px, 100px); }
+            50% { transform: translate(200px, -100px); }
+            75% { transform: translate(-50px, -150px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Container Styling */
+        .container {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            padding: 20px; /* Adds padding for small screens */
+        }
+
+        /* Title Styling (Ramin Social) */
+        .title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            animation: colorChange 1s infinite;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 1);
+        }
+
+        /* Header Styling (Follow Me On Social Media) */
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 40px;
+            animation: colorChange 1s infinite;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 1);
+        }
+
+        /* Social Media Box Styling */
+        .social-media-box {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 40px 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+            position: relative;
+            display: inline-block;
+            max-width: 80%;
+        }
+
+        /* Social Media Links Styling */
+        .social-links {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        /* Social Icon Styling */
+        .social-icon {
+            font-size: 3rem;
+            transition: transform 0.3s, box-shadow 0.3s ease;
+        }
+
+        /* Specific Social Icon Colors */
+        .social-icon.facebook { color: #3b5998; }
+        .social-icon.instagram { color: #E1306C; }
+        .social-icon.telegram { color: #0088cc; }
+        .social-icon.tiktok { color: #000000; } /* TikTok color */
+        .social-icon.twitter { color: #1DA1F2; }
+
+        /* Hover Effect for Icons */
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Color change animation for the title and header */
+        @keyframes colorChange {
+            0% {
+                color: #333333;
+            }
+            25% {
+                color: #4d4d4d;
+            }
+            50% {
+                color: #2e2e2e;
+            }
+            75% {
+                color: #1a1a1a;
+            }
+            100% {
+                color: #333333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Stickers -->
+    <div class="sticker" style="top: 10%; left: 10%; background-image: url('https://i.postimg.cc/MGkJh6Wn/Facebook.png'); animation: stickerAnimation1 10s infinite;"></div>
+    <div class="sticker" style="top: 20%; left: 60%; background-image: url('https://i.postimg.cc/MGkJh6Wn/Facebook.png'); animation: stickerAnimation2 10s infinite;"></div>
+    
+    <div class="sticker" style="top: 30%; left: 30%; background-image: url('https://i.postimg.cc/dtLM3k37/instagram.png'); animation: stickerAnimation3 10s infinite;"></div>
+    <div class="sticker" style="top: 50%; left: 70%; background-image: url('https://i.postimg.cc/dtLM3k37/instagram.png'); animation: stickerAnimation4 10s infinite;"></div>
+    
+    <div class="sticker" style="top: 50%; left: 40%; background-image: url('https://i.postimg.cc/cJGPFFmY/telegram.png'); animation: stickerAnimation1 10s infinite;"></div>
+    <div class="sticker" style="top: 70%; left: 20%; background-image: url('https://i.postimg.cc/cJGPFFmY/telegram.png'); animation: stickerAnimation2 10s infinite;"></div>
+    
+    <div class="sticker" style="top: 70%; left: 80%; background-image: url('https://i.postimg.cc/SQ15BSdm/tiktok1.png'); animation: stickerAnimation3 10s infinite;"></div>
+    <div class="sticker" style="top: 40%; left: 10%; background-image: url('https://i.postimg.cc/SQ15BSdm/tiktok1.png'); animation: stickerAnimation4 10s infinite;"></div>
+
+    <div class="sticker" style="top: 50%; left: 20%; background-image: url('https://i.postimg.cc/NFzD90FY/Twitter-Logo.png'); animation: stickerAnimation5 10s infinite;"></div>
+    <div class="sticker" style="top: 70%; left: 60%; background-image: url('https://i.postimg.cc/NFzD90FY/Twitter-Logo.png'); animation: stickerAnimation6 10s infinite;"></div>
+
+    <div class="container">
+        <div class="title">Ramin Social</div>
+
+        <header>
+            <h1>Follow Me On Social Media</h1>
+        </header>
+
+        <div class="social-media-box">
+            <section class="social-links">
+                <a href="https://www.facebook.com/share/15SUFN3UVy/?mibextid=wwXIfr" target="_blank" class="social-icon facebook" aria-label="Follow me on Facebook">
+                    <i class="fab fa-facebook-square"></i> <!-- Facebook icon -->
+                </a>
+                <a href="https://www.tiktok.com/@ramin_habibi?_t=ZM-8u7Y0HbKV4p&_r=1" target="_blank" class="social-icon tiktok" aria-label="Follow me on TikTok">
+                    <i class="fab fa-tiktok"></i> <!-- TikTok icon -->
+                </a>
+                <a href="https://www.instagram.com/r4min_habibi?igsh=dHJncm5mYTg5a2l6&utm_source=qr" target="_blank" class="social-icon instagram" aria-label="Follow me on Instagram">
+                    <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+                </a>
+                <a href="https://t.me/r4min7" target="_blank" class="social-icon telegram" aria-label="Follow me on Telegram">
+                    <i class="fab fa-telegram-plane"></i> <!-- Telegram icon -->
+                </a>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
